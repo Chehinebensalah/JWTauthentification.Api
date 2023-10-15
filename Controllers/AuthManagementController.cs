@@ -83,7 +83,8 @@ public class AuthManagementController : ControllerBase
                     Result = true
                 });
             }
-            
+
+            return BadRequest("Invalid authentication");
         }
         return BadRequest("invalid request payload ");
     }
