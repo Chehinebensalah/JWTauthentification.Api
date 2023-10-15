@@ -63,6 +63,31 @@ public class AuthManagementController : ControllerBase
         return BadRequest("Invalid request payload");
     }
 
+    [HttpPost]
+    [Route("Login")]
+    public async Task<IActionResult> Login([FromBody] UserRegistrationRequestDto requestDto)
+    {
+        if (ModelState.IsValid)
+        {
+            var existingUser = await _userManager.FindByEmailAsync(requestDto.Email);
+            if (existingUser == null)
+                return BadRequest("invalid user email ");
+
+            var isPasswordValid = await _userManager.CheckPasswordAsync(existingUser, requestDto.Password);
+            if (isPasswordValid)
+            {
+                var token = GenerateJwtToken(existingUser);
+                return Ok(new LoginRequestResponse()
+                {
+                    Token = token,
+                    Result = true
+                });
+            }
+            
+        }
+        return BadRequest("invalid request payload ");
+    }
+    
     private string GenerateJwtToken(IdentityUser user)
     {
         var jwtTokenHandler = new JwtSecurityTokenHandler();
