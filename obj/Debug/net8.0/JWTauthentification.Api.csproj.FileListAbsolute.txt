@@ -78,3 +78,4 @@ C:\Users\MSI\Desktop\dev\JWTauthentification.Api\obj\Debug\net8.0\refint\JWTauth
 C:\Users\MSI\Desktop\dev\JWTauthentification.Api\obj\Debug\net8.0\JWTauthentification.Api.pdb
 C:\Users\MSI\Desktop\dev\JWTauthentification.Api\obj\Debug\net8.0\JWTauthentification.Api.genruntimeconfig.cache
 C:\Users\MSI\Desktop\dev\JWTauthentification.Api\obj\Debug\net8.0\ref\JWTauthentification.Api.dll
+C:\Users\MSI\Desktop\dev\JWTauthentification.Api\obj\Debug\net8.0\JWTauthentification.Api.sourcelink.json
